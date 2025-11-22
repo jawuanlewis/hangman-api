@@ -1,2 +1,3 @@
 # hangman-api
-API for handling common `Hangman` operations
+
+API for handling common `Hangman` game operations
