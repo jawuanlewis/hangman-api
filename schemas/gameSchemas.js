@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const initGameSchema = z.object({
+export const createGameSchema = z.object({
   body: z.object({
     level: z.enum(['easy', 'medium', 'hard', 'expert'], {
       errorMap: () => ({

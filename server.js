@@ -37,7 +37,7 @@ app.use(
       return callback(new Error(msg), false);
     },
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
@@ -59,7 +59,7 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/game', apiLimiter, gameRoutes);
+app.use('/api/v1/games', apiLimiter, gameRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

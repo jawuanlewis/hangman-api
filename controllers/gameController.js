@@ -8,8 +8,8 @@ import {
 import { generateToken } from '../config/jwt.js';
 
 const gameController = {
-  // POST /api/game/init - Initialize new game
-  initializeGame: async (req, res, next) => {
+  // Create new game
+  createGame: async (req, res, next) => {
     try {
       const { level } = req.body;
       const answer = await getRandomWord(level.toLowerCase());
@@ -54,8 +54,8 @@ const gameController = {
     }
   },
 
-  // GET /api/game/current - Get current game state
-  getCurrentGame: async (req, res, next) => {
+  // Get current game state
+  getGame: async (req, res, next) => {
     try {
       const game = req.game; // From auth middleware
 
@@ -74,8 +74,8 @@ const gameController = {
     }
   },
 
-  // POST /api/game/guess - Make a letter guess
-  makeGuess: async (req, res, next) => {
+  // Submit a letter guess
+  updateGame: async (req, res, next) => {
     try {
       const { letter } = req.body;
       const game = req.game;
@@ -146,8 +146,8 @@ const gameController = {
     }
   },
 
-  // DELETE /api/game/reset - Delete current game
-  resetGame: async (req, res, next) => {
+  // Delete current game
+  deleteGame: async (req, res, next) => {
     try {
       const gameId = req.gameId;
       await deleteGame(gameId);
