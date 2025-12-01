@@ -1,7 +1,6 @@
 import {
   getRandomWord,
   createGame,
-  getGameById,
   updateGame,
   deleteGame,
 } from '../config/db.js';
@@ -59,7 +58,7 @@ const gameController = {
     try {
       const game = req.game; // From auth middleware
 
-      res.json({
+      res.status(200).json({
         success: true,
         game: {
           level: game.level,
@@ -129,7 +128,7 @@ const gameController = {
 
       await updateGame(gameId, updateData);
 
-      res.json({
+      res.status(200).json({
         success: true,
         game: {
           level: game.level,
@@ -152,10 +151,7 @@ const gameController = {
       const gameId = req.gameId;
       await deleteGame(gameId);
 
-      res.json({
-        success: true,
-        message: 'Game deleted successfully',
-      });
+      res.status(204).send();
     } catch (error) {
       next(error);
     }
