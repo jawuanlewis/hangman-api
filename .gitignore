@@ -24,8 +24,8 @@ temp/
 *.tmp
 
 # Build output
-dist/
 build/
+dist/
 
 # OS files
 .DS_Store
