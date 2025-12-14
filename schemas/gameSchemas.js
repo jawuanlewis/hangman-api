@@ -1,10 +1,21 @@
 import { z } from 'zod';
 
-export const initGameSchema = z.object({
+export const GAME_LEVELS = [
+  'Movies',
+  'Video Games',
+  'Sports',
+  'Idioms',
+  'TV Shows',
+  'Food',
+  'Animals',
+  'Cities',
+];
+
+export const createGameSchema = z.object({
   body: z.object({
-    level: z.enum(['easy', 'medium', 'hard', 'expert'], {
+    level: z.enum(GAME_LEVELS, {
       errorMap: () => ({
-        message: 'Level must be easy, medium, hard, or expert',
+        message: `Level must be ${GAME_LEVELS.slice(0, -1).join(', ')}, or ${GAME_LEVELS[GAME_LEVELS.length - 1]}`,
       }),
     }),
   }),

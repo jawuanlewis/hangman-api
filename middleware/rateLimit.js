@@ -12,8 +12,8 @@ export const apiLimiter = rateLimit({
   legacyHeaders: false,
 });
 
-// Stricter rate limiter for game initialization
-export const initGameLimiter = rateLimit({
+// Stricter rate limiter for game creation
+export const createGameLimiter = rateLimit({
   windowMs: 5 * 60 * 1000, // 5 minutes
   max: 10, // Limit each IP to 10 game initializations per 5 minutes
   message: {

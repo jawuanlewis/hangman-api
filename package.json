@@ -8,8 +8,10 @@
     "dev": "nodemon server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "prettier --check . && node --check server.js",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "clean": "rm -rf node_modules pnpm-lock.yaml && pnpm install"
   },
   "prettier": {
     "semi": true,
@@ -19,13 +21,6 @@
     "tabWidth": 2,
     "useTabs": false
   },
-  "keywords": [
-    "hangman",
-    "game",
-    "api",
-    "jwt",
-    "express"
-  ],
   "author": "Jawuan Lewis",
   "license": "MIT",
   "engines": {
