@@ -49,7 +49,7 @@ export const initializeWebSocket = (server) => {
 
     // Handle player leaving
     socket.on('disconnect', () => {
-      console.log('ℹ️ Client disconnected:', socket.id);
+      console.log('ℹ️  Client disconnected:', socket.id);
     });
   });
 
