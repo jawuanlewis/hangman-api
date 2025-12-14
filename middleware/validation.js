@@ -2,15 +2,25 @@ import { ZodError } from 'zod';
 
 export const validate = (schema) => async (req, res, next) => {
   try {
-    await schema.parseAsync({
+    const parsed = await schema.parseAsync({
       body: req.body,
       query: req.query,
       params: req.params,
     });
+
+    // Defensive programming: only assign if defined in schema
+    if (parsed.body !== undefined) {
+      req.body = parsed.body;
+    }
+    if (parsed.params !== undefined) {
+      req.params = parsed.params;
+    }
+
     next();
   } catch (error) {
     if (error instanceof ZodError) {
-      const errors = error.errors.map((err) => ({
+      const issues = error.issues || [];
+      const errors = issues.map((err) => ({
         field: err.path.join('.'),
         message: err.message,
       }));
