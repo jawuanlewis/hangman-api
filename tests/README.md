@@ -56,7 +56,7 @@ pnpm test:integration
 
 ```javascript
 import { describe, it, expect } from 'vitest';
-import { yourFunction } from '../../path/to/module.js';
+import { yourFunction } from '@/path/to/module.js';
 
 describe('YourModule', () => {
   it('should do something', () => {
@@ -71,7 +71,7 @@ describe('YourModule', () => {
 ```javascript
 import { describe, it, expect } from 'vitest';
 import request from 'supertest';
-import app from '../../server.js';
+import app from '@/server.js';
 
 describe('POST /api/v1/games', () => {
   it('should create a new game', async () => {

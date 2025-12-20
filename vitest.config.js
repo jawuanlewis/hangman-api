@@ -3,8 +3,15 @@
  * https://vitest.dev/config/
  */
 import { defineConfig } from 'vitest/config';
+import { fileURLToPath } from 'url';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./', import.meta.url)),
+      '@tests': fileURLToPath(new URL('./tests', import.meta.url)),
+    },
+  },
   test: {
     environment: 'node',
     setupFiles: ['./tests/setup.js'],

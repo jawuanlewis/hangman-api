@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { generateToken, verifyToken } from '../../../config/jwt.js';
+import { generateToken, verifyToken } from '@/config/jwt.js';
 
 describe('JWT Utils', () => {
   describe('generateToken', () => {
