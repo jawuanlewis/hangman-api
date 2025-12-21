@@ -4,7 +4,7 @@ This directory contains all tests for the `hangman-api` project.
 
 ## Directory Organization
 
-```
+```text
 tests/
 ├── setup.js                 # Global test setup (MongoDB Memory Server)
 ├── unit/                    # Unit tests (isolated component tests)
