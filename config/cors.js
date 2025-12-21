@@ -1,17 +1,19 @@
-const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:3000',
-  process.env.CUSTOM_URL,
-  process.env.PROD_URL,
-  process.env.STAGING_URL,
-].filter(Boolean); // Remove undefined values
+const allowedOrigins = new Set(
+  [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    process.env.CUSTOM_URL,
+    process.env.PROD_URL,
+    process.env.STAGING_URL,
+  ].filter(Boolean) // Remove undefined values
+);
 
 export const corsOptions = {
   origin: function (origin, callback) {
     // Allow requests with no origin
     if (!origin) return callback(null, true);
 
-    if (allowedOrigins.includes(origin)) {
+    if (allowedOrigins.has(origin)) {
       return callback(null, true);
     }
 
