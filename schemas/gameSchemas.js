@@ -15,7 +15,7 @@ export const createGameSchema = z.object({
   body: z.object({
     level: z.enum(GAME_LEVELS, {
       errorMap: () => ({
-        message: `Level must be ${GAME_LEVELS.slice(0, -1).join(', ')}, or ${GAME_LEVELS[GAME_LEVELS.length - 1]}`,
+        message: `Level must be ${GAME_LEVELS.slice(0, -1).join(', ')}, or ${GAME_LEVELS.at(-1)}`,
       }),
     }),
   }),

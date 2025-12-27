@@ -7,10 +7,15 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:ui": "vitest --ui",
     "lint": "prettier --check . && node --check server.js",
-    "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
     "clean": "rm -rf node_modules pnpm-lock.yaml && pnpm install"
   },
   "prettier": {
@@ -38,7 +43,11 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.16",
+    "mongodb-memory-server": "^11.0.0",
     "nodemon": "^3.1.11",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "supertest": "^7.1.4",
+    "vitest": "^4.0.16"
   }
 }

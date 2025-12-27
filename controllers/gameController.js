@@ -20,10 +20,10 @@ const gameController = {
         });
       }
 
-      const preserveChars = [' ', '-', ':', ',', '.', "'"];
+      const preserveChars = new Set([' ', '-', ':', ',', '.', "'"]);
       const currentProgress = answer
         .split('')
-        .map((char) => (preserveChars.includes(char) ? char : '_'))
+        .map((char) => (preserveChars.has(char) ? char : '_'))
         .join('');
 
       const gameData = {
@@ -87,7 +87,7 @@ const gameController = {
         });
       }
 
-      if (game.guessedLetters && game.guessedLetters.includes(letter)) {
+      if (game.guessedLetters?.includes(letter)) {
         return res.status(400).json({
           success: false,
           error: 'Letter already guessed',
