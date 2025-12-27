@@ -13,7 +13,8 @@ tests/
 │   ├── middleware/          # Middleware tests
 │   └── schemas/             # Schema validation tests
 └── integration/             # Integration tests (full request/response cycle)
-    └── api/                 # API endpoint tests
+    ├── api/                 # API endpoint tests
+    └── helpers/             # Test helper methods
 ```
 
 ## Test Types
