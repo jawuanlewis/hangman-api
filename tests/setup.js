@@ -29,7 +29,39 @@ beforeAll(async () => {
   // Set the database globally so tests can access it
   globalThis.testDb = db;
   globalThis.testDbUri = uri;
+
+  // Seed initial test data
+  await seedTestData();
 });
+
+// Seed test data
+async function seedTestData() {
+  if (!db) return;
+
+  const wordsCollection = db.collection('words');
+
+  // Add test words for each category
+  const testWords = [
+    { category: 'movies', word: 'JAWS' },
+    { category: 'movies', word: 'THE MATRIX' },
+    { category: 'video games', word: 'MINECRAFT' },
+    { category: 'video games', word: 'FORTNITE' },
+    { category: 'sports', word: 'SOCCER' },
+    { category: 'sports', word: 'BASKETBALL' },
+    { category: 'idioms', word: 'BREAK THE ICE' },
+    { category: 'idioms', word: 'BITE THE BULLET' },
+    { category: 'tv shows', word: 'FRIENDS' },
+    { category: 'tv shows', word: 'THE OFFICE' },
+    { category: 'food', word: 'PIZZA' },
+    { category: 'food', word: 'HAMBURGER' },
+    { category: 'animals', word: 'ELEPHANT' },
+    { category: 'animals', word: 'TIGER' },
+    { category: 'cities', word: 'TOKYO' },
+    { category: 'cities', word: 'PARIS' },
+  ];
+
+  await wordsCollection.insertMany(testWords);
+}
 
 // Clean up database after each test to ensure isolation
 afterEach(async () => {
@@ -38,6 +70,8 @@ afterEach(async () => {
     for (const collection of collections) {
       await collection.deleteMany({});
     }
+    // Re-seed test data for next test
+    await seedTestData();
   }
 });
 

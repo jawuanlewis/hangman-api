@@ -24,5 +24,9 @@ export default defineConfig({
     hookTimeout: 10000,
     globals: true,
     pool: 'threads',
+    fileParallelism: false,
+    env: {
+      NODE_ENV: 'test',
+    },
   },
 });

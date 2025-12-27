@@ -1,4 +1,4 @@
-# Test Directory Structure
+# Project Testing
 
 This directory contains all tests for the `hangman-api` project.
 
@@ -8,11 +8,13 @@ This directory contains all tests for the `hangman-api` project.
 tests/
 ├── setup.js                 # Global test setup (MongoDB Memory Server)
 ├── unit/                    # Unit tests (isolated component tests)
+│   ├── config/              # Config module tests
 │   ├── controllers/         # Controller logic tests
 │   ├── middleware/          # Middleware tests
-│   └── config/              # Config module tests
+│   └── schemas/             # Schema validation tests
 └── integration/             # Integration tests (full request/response cycle)
-    └── api/                 # API endpoint tests
+    ├── api/                 # API endpoint tests
+    └── helpers/             # Test helper methods
 ```
 
 ## Test Types

@@ -1,8 +1,7 @@
 import 'dotenv/config';
 import { MongoClient, ObjectId } from 'mongodb';
 
-const uri = process.env.MONGO_URI;
-const client = new MongoClient(uri);
+let client = null;
 let isConnected = false;
 
 // ========== DB Connection ========== //
@@ -10,6 +9,11 @@ let isConnected = false;
 async function connectToDB() {
   try {
     if (!isConnected) {
+      // Create client lazily to allow test environment to set MONGO_URI first
+      if (!client) {
+        const uri = process.env.MONGO_URI;
+        client = new MongoClient(uri);
+      }
       await client.connect();
       isConnected = true;
       console.log('✅ Connected to database');
