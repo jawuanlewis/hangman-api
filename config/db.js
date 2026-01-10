@@ -16,7 +16,6 @@ async function connectToDB() {
       }
       await client.connect();
       isConnected = true;
-      console.log('✅ Connected to database');
 
       // Create TTL index for automatic game cleanup (24 hours)
       const db = client.db(process.env.DB_NAME);
@@ -48,7 +47,6 @@ async function getRandomWord(category) {
 
 async function closeConnection() {
   if (isConnected) {
-    console.log('ℹ️  Closing database connection');
     await client.close();
     isConnected = false;
   }
