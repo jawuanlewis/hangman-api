@@ -10,8 +10,6 @@
 - [Installation](#%EF%B8%8F-installation)
 - [Usage](#%EF%B8%8F-usage)
 - [Testing](#-testing)
-- [Next Steps](#-next-steps)
-- [Credits](#-credits)
 
 ## 🧠 Project Overview
 
@@ -205,15 +203,6 @@ Copy the example file and update the values with your own configuration:
 cp .env.example .env
 ```
 
-Key variables:
-
-- **MONGO_URI:** MongoDB connection string (local or Atlas)
-- **DB_NAME:** database name
-- **JWT_SECRET:** secret key for signing tokens
-- **PORT:** server port (default: `3000`)
-
-See `.env.example` for the full list of available variables.
-
 ### Run the development server
 
 ```bash
@@ -255,17 +244,3 @@ pnpm test:integration
 # Generate a coverage report
 pnpm test:coverage
 ```
-
-## 🔮 Next Steps
-
-### Future Features
-
-- Add a main game page, with no particular theme and an increasing level of difficulty with each word.
-- Generate small hints each time the user guesses incorrectly (potentially using OpenAI API).
-- Add multiplayer support via WebSockets.
-- Add a "How to Play" page.
-
-## 🙏 Credits
-
-- **Social Media Icons:** [Icons8](https://icons8.com)
-- **Level Images:** generated with [ImageFX](https://labs.google/fx/tools/image-fx)
