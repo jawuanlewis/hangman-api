@@ -3,7 +3,6 @@
 ## 📚 Table of Contents
 
 - [Project Overview](#-project-overview)
-- [Live Demo](#-live-demo)
 - [Tech Stack](#-tech-stack)
 - [Project Structure](#-project-structure)
 - [API Endpoints](#-api-endpoints)
@@ -13,21 +12,7 @@
 
 ## 🧠 Project Overview
 
-Backend API for my own personal, web-based version of the game **_Hangman_**. This REST API handles all game logic and state management, serving the [frontend client](https://github.com/jawuanlewis/hangman-client). Players must correctly guess the letters of a given mystery word within 6 attempts. There are 8 available themes of words/phrases for players to guess:
-
-1. Movies
-2. Video Games
-3. Sports
-4. Idioms
-5. TV Shows
-6. Food
-7. Animals
-8. Cities
-
-## 🚀 Live Demo
-
-- Play the game here: [Hangman](https://hangman.jawuanlewis.dev)
-- Initial designs available here: [Figma Designs](https://www.figma.com/design/tOop8Aqlh0zycbjdERI0Ut/Hangman?node-id=0-1&t=uR8s9pxzcX4Zwzt0-1)
+Backend API for my own personal, web-based version of the game **_Hangman_**. This REST API handles all game logic and state management, serving the [frontend client](https://github.com/jawuanlewis/hangman-client). You can play the game here: [Hangman](https://hangman.jawuanlewis.dev)
 
 ## 💻 Tech Stack
 
