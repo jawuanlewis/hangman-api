@@ -14,8 +14,7 @@
     "test:integration": "vitest run tests/integration",
     "test:ui": "vitest --ui",
     "lint": "prettier --check . && node --check server.js",
-    "format:check": "prettier --check .",
-    "format:fix": "prettier --write .",
+    "format": "prettier --write .",
     "clean": "rm -rf node_modules pnpm-lock.yaml && pnpm install"
   },
   "prettier": {
