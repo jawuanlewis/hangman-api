@@ -165,7 +165,13 @@ Authorization: Bearer <jwt>
 
 ## ⚙️ Installation
 
-**NOTE:** In order to actually run this project locally, you would need your own MongoDB instance with a seeded words collection. This is meant to be my own personal project, but I will still give setup instructions below.
+### Prerequisites
+
+- **Node.js** (>=20.0.0)
+- **pnpm** — install via `npm install -g pnpm`
+- **MongoDB** instance (local or [Atlas](https://www.mongodb.com/atlas)) with a seeded words collection
+
+> Setup instructions are provided below for reference.
 
 ### Clone the repository
 
